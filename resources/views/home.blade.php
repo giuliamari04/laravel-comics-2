@@ -10,7 +10,7 @@
     <div class="row d-flex flex-nowrap overflow-x-auto  py-4">
         @foreach ( $comics as $key => $comic )
              <div class="col-12 col-md-4 col-lg-2 mt-2">
-            <a href="{{route('comics.show', $key)}}" class="card border-0 bg-trasparent text-light text-decoration-none  ">
+            <a href="{{route('comics.show', $key + 1)}}" class="card border-0 bg-trasparent text-light text-decoration-none  ">
                 <img src="{{ $comic['thumb']}}" alt="{{$comic['title'] }}">
                 <h5>{{$comic['title']}}</h5>
             </a>
