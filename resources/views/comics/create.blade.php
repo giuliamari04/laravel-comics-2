@@ -5,16 +5,24 @@
 @section('content')
     <main>
      <section>
-        <form action="{{route('comics.store')}}" method="POST">
+        <div class="container w-50 py-5">
+             <form action="{{route('comics.store')}}" method="POST">
             @csrf
-            <input type="text" id="title" name="title" placeholder="inserisci un titolo" class="form-control">
-            <input type="text" id="description" name="description" placeholder="inserisci una description" class="form-control">
-            <input type="text" id="price" name="price" placeholder="inserisci un price" class="form-control">
-            <input type="text" id="type" name="type" placeholder="inserisci un type" class="form-control">
+            <label for="title">Inserisci il titolo:</label>
+            <input type="text" id="title" name="title" placeholder="Titolo..." class="form-control my-2 w-50">
+            <label for="description">Inserisci una descrizione:</label>
+            <input type="text" id="description" name="description" placeholder="Descrizione..." class="form-control my-2 pb-5">
+            <label for="price">Inserisci il prezzo di vendita:</label>
+            <input type="text" id="price" name="price" placeholder="Prezzo..." class="form-control w-25 my-2">
+            <label for="type">A che categoria appartiene?</label>
+            <input type="text" id="type" name="type" placeholder="inserisci una categoria" class="form-control my-2 w-50">
 
-            <button type="submit">invia</button>
+            <button type="submit" class="btn btn-primary my-4">invia</button>
+            <button type="reset" class="btn btn-secondary">Annulla</button>
 
         </form>
+        </div>
+
      </section>
 
     </main>
