@@ -70,15 +70,29 @@ copia file .env.example e rinomina con .env
 php artisan key:generate
 npm install
 ```
+
+##creare condroller per modifiche dati
+```bash
+ php artisan make:controller ComicController --resource
+ ```
+mostra liste di route
+```bash
+ php artisan route:list --except-vendor  
+ ```
+crea model seeder migration
+```bash
+ php artisan make:model Comic -rcms
+ ```
 ## consegna esercizio 
 
-Create un nuovo progetto Laravel. Concentratevi sul layout: create un file di layout in cui inserire la struttura comune di tutte le pagine del sito web (tag head, tag body, ...) eventualmente includendo header e footer tramite due partials.
-
-Create poi una rotta per visualizzare la lista di tutti i fumetti recuperati da un file inserito nella cartella config e abbellite il tutto sfruttando Sass.
-
+Milestone 1
+Tramite gli appositi comandi artisan create un model con relativa migration e seeder e resource controller.
+Editate la resource route
+Milestone 2
+Iniziate a definire le prime operazioni CRUD con le relative view dove necessarie:
+- index()
+- show()
+- create()
+- store() (solo dump dei dati)
 Bonus:
-Create più pagine istituzionali che condividono lo stesso layout (utilizzando il routing)
-
-Terminate l'esercizio di ieri aggiungendo la rotta e il template per il dettaglio del fumetto
-Bonus:
-Create le rotte le pagine (index e show) per un'altra entità a vostro piacere
+Procedere con il salvataggio dei dati sul db
