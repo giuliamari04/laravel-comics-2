@@ -6,16 +6,16 @@
     <main>
         <section>
             <div class="bg-primary img-comic">
-                <img src="{{ $comic['thumb'] }}" class="position-absolute " alt="img">
+                <img src="{{ $comic->thumb }}" class="position-absolute " alt="img">
             </div>
             <div class="container py-5 m-auto m-0">
                 <div class="row d-flex flex-nowrap  justify-content-center  align-content-center  align-items-center ">
                     <div class="col-6">
-                        <h3 class="text-uppercase fw-bold ">{{ $comic['title'] }}</h3>
+                        <h3 class="text-uppercase fw-bold ">{{ $comic->title }}</h3>
                         {{-- tabella verde --}}
                         <div class="row" id="green-table">
                             <div class="col-6">
-                                <span class="subtitle">U.S Price </span><span>{{ $comic['price'] }}</span>
+                                <span class="subtitle">U.S Price </span><span>{{ $comic->price }}</span>
                             </div>
                             <div class="col-2">
                                 <span class="subtitle">AVAILABLE</span>
@@ -26,7 +26,7 @@
 
                         </div>
                         {{-- descrizione --}}
-                        <div class="py-2">{{ $comic['description'] }}</div>
+                        <div class="py-2">{{ $comic->description}}</div>
 
                     </div>
                      {{-- pubblicità --}}
@@ -66,7 +66,7 @@
                         series:
                     </div>
                     <div class="col">
-                        {{ $comic['type'] }}
+                        {{ $comic->type }}
                     </div>
                 </li>
                 <li class="row  py-3">
@@ -74,7 +74,7 @@
                         U.S. Price:
                     </div>
                     <div class="col">
-                        {{ $comic['price'] }}
+                        {{ $comic->price }}
                     </div>
                 </li>
                 <li class="row  py-3">
@@ -82,7 +82,7 @@
                         On Sale Date:
                     </div>
                     <div class="col">
-                        {{ $comic['sale_date'] }}
+                        {{ $comic->sale_date }}
                     </div>
                 </li>
             </ul>
