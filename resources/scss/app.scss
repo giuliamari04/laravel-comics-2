@@ -1,0 +1,321 @@
+@use './partials/variables' as *;
+
+$fa-font-path: "../webfonts" !default;
+
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+@import '~bootstrap/scss/bootstrap';
+
+// utility
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:rgb(32, 32, 32);
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+
+//   componenti
+#header{
+    .active{
+        color: $blue_primary !important;
+        padding-bottom: 40px;
+        padding-top: 30px;
+        border-bottom: 7px solid $blue_primary;
+
+        }
+        .navbar-toggler {
+        display: none;
+        }
+        .nav-link{
+            padding-bottom: 30px;
+            padding-top: 30px;
+        }
+        .dropdown{
+        display: none;
+        }
+        .icon{
+        width: 80%;
+
+        }
+        nav{
+        height: 13vh;
+        }
+
+
+        .blue-line{
+            border-bottom: 3px solid $blue_primary;
+            width: 60%;
+        }
+        @media screen and (max-width: 769px) {
+        nav {
+        height: 10vh;
+        }
+        .nav-bar{
+        display: flex;
+        flex-wrap: nowrap;
+        }
+        .navbar-nav{
+
+        font-size: small;
+        padding: 5px;
+        }
+        .nav-link.active::after {
+        bottom: 7px;
+        }
+        .icon{
+        width: 40%;
+        }
+        }
+
+        @media screen and (max-width: 577px) {
+        .navbar-toggler {
+        display: block;
+        font-size: 0.8em;
+        }
+
+        .navbar-nav {
+        display: none;
+        }
+        nav {
+        height: 8vh;
+        }
+        nav {
+        height: 10vh;
+        }
+        .nav-bar{
+        display: flex;
+        flex-wrap: nowrap;
+        }
+        .nav-link.active::after {
+        bottom: 5px;
+        }
+        .icon{
+        width: 40%;
+        }
+
+        }
+}
+
+#jumbo{
+
+        height:43vh;
+        background-image: url(../img/jumbotron.jpg);
+        background-size: cover;
+
+}
+#card-content{
+    background-color: black;
+    .bg-trasparent{
+        background-color: transparent;
+    }
+}
+.card{
+    img{
+        height: 35vh;
+    }
+}
+
+.my-tag{
+    width: 18%;
+    margin-top: -30px ;
+    margin-left: 5%;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-weight: 800;
+    background-color: #0282f9;
+}
+#buy-comics{
+    background-color: $blue_primary;
+    height: 20vh;
+
+
+      .icon{
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+      }
+
+      .fw-light{
+          font-size: 1.2em;
+      }
+
+}
+footer{
+    .bg-top-footer{
+        background-image: url('../img/footer-bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 43vh;
+        color: white;
+        overflow: hidden;
+    }
+
+    .bg-bot-footer{
+        background-color: #303030;
+        height:15vh;
+    }
+    .my-logo-w{
+        width: 450px;
+        top: 50%;
+    }
+    ul li{
+        list-style: none;
+        font-weight: 300;
+        font-size: 0.7em;
+        color:rgb(172, 169, 169) ;
+        font-family: 'Open Sans', sans-serif;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+
+        &:hover{
+        text-decoration: underline;
+        color: inherit;
+    }
+    }
+
+    span{
+        text-transform: uppercase;
+        font-weight: 700;
+       padding-bottom: 10px;
+    }
+
+    .glow-on-hover {
+        width: 140px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background:transparent;
+        border: 2px solid $blue_primary;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+    }
+
+    .glow-on-hover:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        border: 2px solid $blue_primary;
+        transition: opacity .3s ease-in-out;
+
+    }
+
+    .glow-on-hover:active {
+        color: #000
+    }
+
+    .glow-on-hover:active:after {
+        background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:#303030;
+        left: 0;
+        top: 0;
+    }
+
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+
+    @media screen and (max-width: 768px) {
+      .bg-top-footer {
+        height: fit-content;
+      }
+      .my-logo-w {
+        width: 300px;
+      }
+      ul li {
+        font-size: 0.6em;
+      }
+      .glow-on-hover {
+        width: 120px;
+        height: 40px;
+      }
+      .bg-bot-footer{
+        background-color: #303030;
+        height:fit-content;
+    }
+    }
+
+
+    @media screen and (max-width: 576px) {
+      .bg-top-footer {
+        height: 80vh;
+      }
+      .my-logo-w {
+        width: 200px;
+      }
+      ul li {
+        font-size: 0.5em;
+      }
+      .glow-on-hover {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8em;
+      }
+      span img{
+        width: 20px;
+      }
+    }
+}
+#green-table{
+    background-color: #55ba59;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    .subtitle{
+        color:#91ee94 ;
+    }
+}
+.img-comic{
+    height: 10vh;
+    img{
+        width: 13%;
+        margin-left: 15%;
+        margin-top: -200px;
+        border: 2px solid white;
+    }
+}
