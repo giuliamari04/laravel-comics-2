@@ -23,7 +23,7 @@
                     <a class="nav-link" href="#">games</a>
 
 
-                    <a class="nav-link" href="#">collectibles</a>
+                    <a class="nav-link" href="{{ route('comics.create') }}">create</a>
 
 
                     <a class="nav-link" href="#">videos</a>

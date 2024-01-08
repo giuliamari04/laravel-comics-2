@@ -36,6 +36,7 @@ use App\Http\Controllers\HomeController;
 // })->name('comics.show');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/comics/{comic}', [HomeController::class, 'show'])->name('comics.show');
+// Route::get('/comics/{comic}', [HomeController::class, 'show'])->name('comics.show');
+// Route::get('/comics/{comic}', [ComicController::class, 'create'])->name('comics.create');
 
 Route::resource('comics', ComicController::class);
