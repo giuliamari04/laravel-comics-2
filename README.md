@@ -96,3 +96,8 @@ Iniziate a definire le prime operazioni CRUD con le relative view dove necessari
 - store() (solo dump dei dati)
 Bonus:
 Procedere con il salvataggio dei dati sul db
+
+Milestone 3
+oggi lavorate sulla stessa repo di ieri e completate le operazioni CRUD.
+Bonus:
+Aggiungere validazioni e messaggi di errore e alla cancellazione messaggio di conferma all'utente
