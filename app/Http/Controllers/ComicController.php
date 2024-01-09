@@ -37,15 +37,26 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        // prendo dati del from dalla request
         $formData = $request->all();
+        $request->validate([
+            'title'=>'required|min:5|max:100',
+            'price'=>'required',
+        ]);
+        //creo nuovo prodotto
         $newComic = new Comic();
-        $newComic->title = $formData['title'];
-        $newComic->description = $formData['description'];
-        $newComic->price = $formData['price'];
+         $newComic->title = $formData['title'];
+         $newComic->description = $formData['description'];
+         $newComic->price = $formData['price'];
         $newComic->type = $formData['type'];
         $newComic->sale_date = '2020-07-01';
-        $newComic->series = 'a piacere';
-        $newComic->save();
+         $newComic->series = 'a piacere';
+
+       //assegno dati del form al nuovo prodotto
+        // $newComic->fill($formData);
+         $newComic->save();
+
+        //$newComic = Comic::create($formData);
         return to_route('comics.index');
     }
 
@@ -68,7 +79,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -80,7 +91,15 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $formData = $request->all();
+        $comic->title = $formData['title'];
+        $comic->description = $formData['description'];
+        $comic->price = $formData['price'];
+        $comic->type = $formData['type'];
+        $comic->sale_date = '2020-07-01';
+        $comic->series = 'a piacere';
+        $comic->update();
+        return to_route('comics.show', $comic->id);
     }
 
     /**
@@ -91,6 +110,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return to_route('comics.index')->with('message',"il prodotto $comic->title è stato cancellato");
+
     }
 }

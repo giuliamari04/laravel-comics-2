@@ -57,6 +57,14 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident odit adipisci explicabo
                         temporibus omnis dolor qui assumenda illum, aperiam obcaecati.
                     </div>
+                    <div class="col">
+                        <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-secondary">Modifica</a>
+                        <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                           <button type="submit" class="btn btn-danger"> cancella</button>
+                        </form>
+                    </div>
                 </li>
             </ul>
             <ul class="col-6">

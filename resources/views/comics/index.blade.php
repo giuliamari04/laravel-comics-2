@@ -5,6 +5,12 @@
 @section('content')
 <main id="card-content">
     <section class="container py-5" >
+
+        @if (session()->has('message'))
+        <div class="alert alert-success ">
+            {{session('message')}}
+        </div>
+        @endif
         <h1 class="text-light py-3">List Comics</h1>
         <div class="row gy-4">
           @foreach ($comics as $comic)
@@ -15,6 +21,12 @@
                         <h5 class="card-title">{{$comic->title}}</h5>
                         <p class="card-text">{!! substr($comic->description, 0, 100) . '...' !!}</p>
                         <a href="{{route('comics.show', $comic->id)}}" class="btn btn-primary">Vedi dettaglio</a>
+                        <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                           <button type="submit" class="btn btn-danger"> cancella</button>
+                        </form>
+
                     </div>
                 </div>
             </div>
