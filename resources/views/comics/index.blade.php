@@ -38,7 +38,7 @@
                         <form action="{{route('comics.destroy',$comic->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                           <button type="submit" class="btn btn-danger"> cancella</button>
+                            <button type="submit" class="cancel-button btn btn-danger" data-item-title="{{$comic->title}}">Cancella</button>
                         </form>
 
                     </div>
