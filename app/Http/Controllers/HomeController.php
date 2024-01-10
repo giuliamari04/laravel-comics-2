@@ -19,9 +19,5 @@ class HomeController extends Controller
 
         return view('home', compact('comics'));
     }
-    public function show(Comic $comic)
-    {
-        return view('comics.show', compact('comic'));
-    }
 
 }

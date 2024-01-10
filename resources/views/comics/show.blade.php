@@ -96,7 +96,7 @@
             </ul>
         </div>
         </section>
-
+        @include('partials.modal_delete');
     </main>
 
 @endsection

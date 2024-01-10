@@ -5,7 +5,21 @@
 @section('content')
 <main id="card-content">
     <section class="container py-5" >
+        <div>
+            <form action="{{route('comics.index')}}" method="GET">
 
+                <select name="search" id="search">
+                <option value="">All</option>
+                <option value="comic book">comic book</option>
+                <option value="graphic novel">graphic novel</option>
+
+            </select>
+
+
+
+            <button type="submit" class="btn btn-danger ms-3">Cerca</button>
+        </form>
+        </div>
         @if (session()->has('message'))
         <div class="alert alert-success ">
             {{session('message')}}
@@ -35,7 +49,7 @@
         </div>
 
     </section>
-
+    @include('partials.modal_delete');
 </main>
 
 @endsection

@@ -11,5 +11,9 @@ class Comic extends Model
     // quelli che devi escludere
     // protected $guarded=[];
     // quelli che devi includere
-    //protected $fillable = ['title','description','price','type','sale_date','series'];
+    protected $fillable = ['title', 'description', 'thumb', 'price', 'sale_date', 'series', 'type'];
+
+    protected $attributes = [
+        'series' => 'Default Series Value',
+    ];
 }
