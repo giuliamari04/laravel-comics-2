@@ -83,6 +83,14 @@ crea model seeder migration
 ```bash
  php artisan make:model Comic -rcms
  ```
+ creo rotte
+ ```bash
+Route::resource('comics', ComicController::class);
+ ```
+creo form request per validazione 
+ ```bash
+php artisan make:request StoreModelRequest
+ ```
 ## consegna esercizio 
 
 Milestone 1
@@ -101,3 +109,10 @@ Milestone 3
 oggi lavorate sulla stessa repo di ieri e completate le operazioni CRUD.
 Bonus:
 Aggiungere validazioni e messaggi di errore e alla cancellazione messaggio di conferma all'utente
+
+Ciao ragazzi,
+sempre lavorando sulla repo di ieri, potete aggiungere le validazioni in modo da rendere più stabile il vostro gestionale di fumetti. Validare gli input ricevuti in fase di creazione e modifica, rispondendo con errori chiari e in italiano.
+Bonus:
+utilizzare le Request personalizzate per validare i dati
+aggiungere conferma alla cancellazione degli elementi
+aggiungere un filtro a vostra scelta per i dati dei comics
